@@ -59,11 +59,11 @@ sigmoid函数的作用将输入限制到(0, 1)这个范围内
 &nbsp;&nbsp;&nbsp;&nbsp;均值漂移
 
 **2.tanh函数**  
-公式：![](../image/note3/tanh_1.jpg)  
+公式：![](https://github.com/Joey-Hu/Python_TensorFlow_Keras/blob/master/TF/image/note3/tanh_1.jpg)  
 
-反向传播：![](../image/note3/tanh_2.jpg)  
+反向传播：![](https://github.com/Joey-Hu/Python_TensorFlow_Keras/blob/master/TF/image/note3/tanh_2.jpg)  
 
-<center>![](../image/note3/tanh.jpg)</center>  
+<center>![](https://github.com/Joey-Hu/Python_TensorFlow_Keras/blob/master/TF/image/note3/tanh.jpg)</center>  
 
 无论从理论公式还是函数图像，这个函数都是一个和sigmoid非常相像的激活函数，他们的性质也确实如此。但是比起sigmoid，tanh减少了一个缺点，就是他本身是零均值的，也就是说，在传递过程中，输入数据的均值并不会发生改变，这就使他在很多应用中能表现出比sigmoid优异一些的效果。
 
