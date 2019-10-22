@@ -7,11 +7,8 @@
 
 **1.二次代价函数（又称均方差损失, MSE）**
 
-<<<<<<< HEAD
 ![](../image/note3/quadratic_cost.jpg)
-=======
 ![](../image/note3/quadratic_cost.jpg)
->>>>>>> 5e7e150ca27841bd16e6b404200ac8af3af6c811
 
 我们使用梯度下降法调整权值参数的大小，求权值w和偏置b的梯度推导  
 ![](../image/note3/gradient.jpg)
@@ -61,11 +58,11 @@ sigmoid函数的作用将输入限制到(0, 1)这个范围内
 &nbsp;&nbsp;&nbsp;&nbsp;均值漂移
 
 **2.tanh函数**  
-公式：![](https://github.com/Joey-Hu/Python_TensorFlow_Keras/blob/master/TF/image/note3/tanh_1.jpg)  
+公式：![](../image/note3/tanh_1.jpg)  
 
-反向传播：![](https://github.com/Joey-Hu/Python_TensorFlow_Keras/blob/master/TF/image/note3/tanh_2.jpg)  
+反向传播：![](../image/note3/tanh_2.jpg)  
 
-![](https://github.com/Joey-Hu/Python_TensorFlow_Keras/blob/master/TF/image/note3/tanh.jpg)
+![](../image/note3/tanh.jpg)
 
 无论从理论公式还是函数图像，这个函数都是一个和sigmoid非常相像的激活函数，他们的性质也确实如此。但是比起sigmoid，tanh减少了一个缺点，就是他本身是零均值的，也就是说，在传递过程中，输入数据的均值并不会发生改变，这就使他在很多应用中能表现出比sigmoid优异一些的效果。
 
@@ -82,11 +79,31 @@ sigmoid函数的作用将输入限制到(0, 1)这个范围内
 
 缺点： - 左硬饱和性，当输入小于零时，导数恒为0，会使很多神经元无法得到更新，出现“神经元死亡”。 - relu函数输出无负值。 - 均值漂移，relu函数的输出均值恒大于0（从relu函数的输出范围就能看出来）。
 
-**4.leaky relu函数**
-![](../image/note3/leak_relu.jpg)
+**4.leaky relu函数**  
+![](../image/note3/leak_relu.jpg)  
+
+相较于ReLU，Leaky ReLU同样有收敛速度快和运算复杂度低的优点，由于在x<0时有一个比较小的梯度α，使得x<0依然可以进行梯度传递和更新，在一定程度上避免了神经元“死亡”的问题。
 
 
-**5.softmax函数**
+**5.softmax函数**  
+softmax函数是在计算多分类问题时经常使用到的一个函数  
+
+![](../image/note3/softmax_1.jpg)   
+
+函数功能：把接收到的输入归一化成每一个分量都在(0,1)之间并且总和为1
+
+![](../image/note3/softmax_2.jpg)  
+
+softmax函数可以看做是sigmoid函数的一个扩展  
+![](../image/note3/softmax_3.jpg)
+
+上图函数形式与sigmoid函数很类似，相较于原始的sigmoid函数，softmax的一个优势是可以运用于多分类问题中，另一个好处是在计算概率的时候更符合一般意义上我们认知的概率分布，体现出物体属于各个类别相对的概率大小。
+
+反向传播：  
+![](../image/note3/softmax_4.jpg)  
+
+其中k=$\sum_{i\not=j}{e^{z_j}}$
+
 
 参考资料：  
 https://blog.csdn.net/SoftwareTeacher/article/details/84302013  
