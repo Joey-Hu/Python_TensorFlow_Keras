@@ -7,17 +7,16 @@
 
 **1.二次代价函数（又称均方差损失, MSE）**
 
-<center>![](../image/note3/quadratic_cost.jpg)</center>
+![](../image/note3/quadratic_cost.jpg)
 
 我们使用梯度下降法调整权值参数的大小，求权值w和偏置b的梯度推导  
-
-<center>![](../image/note3/gradient.jpg)</center>
+![](../image/note3/gradient.jpg)
 
 其中，z表示神经元的输入，σ表示激活函数。w和b的梯度跟激活函数的梯度成正比，激活函数的梯度越大，w和b的大小调整的越快，训练收敛得就越快。 
 
 MSE的缺点：和σ的导数有关，可能会产生收敛速度缓慢的现象(以sigmoid函数为例) 
  
-<center>![](../image/note3/sigmoid.jpg)</center>
+![](../image/note3/sigmoid.jpg)
   
 在激活函数的两端，梯度（黄色）都会趋向于0，采取MSE的方法衡量损失，在a趋向于1而y是0的情况下，损失loss是1，而梯度会趋近于0，在误差很大时收敛速度也会非常慢。  
 
@@ -25,13 +24,13 @@ MSE的缺点：和σ的导数有关，可能会产生收敛速度缓慢的现象
 
 换一个思路，不改变激活函数，改变损失函数，使用交叉熵损失函数  
 
-<center>![](../image/note3/cross_entropy.jpg)</center>
+![](../image/note3/cross_entropy.jpg)
 
 其中，C表示损失函数，x表示样本，y表示实际值，a表示输出值，n表示样本总数
 
-<center>![](../image/note3/cross_entropy_2.jpg)</center>
+![](../image/note3/cross_entropy_2.jpg)
 
-<center>![](../image/note3/cross_entropy_3.jpg)</center>
+![](../image/note3/cross_entropy_3.jpg)
 
 我们可以看到权值和偏置值的调整和σ'(z)无关，另外，梯度公式中σ(z)-y表示输出值和实际值的误差。所以当梯度越大时，梯度就越大，w和b的调整就越快，训练的速度也越快。
 
@@ -39,7 +38,7 @@ MSE的缺点：和σ的导数有关，可能会产生收敛速度缓慢的现象
 
 **3.对数损失函数(Log-likelihood Loss)**  
 
-<center>![](../image/note3/log_likehood_cost.jpg)</center>
+![](../image/note3/log_likehood_cost.jpg)
 
 ### 激活函数
 
@@ -47,8 +46,7 @@ MSE的缺点：和σ的导数有关，可能会产生收敛速度缓慢的现象
 公式：![](../image/note3/sigmoid_1.jpg)  
 
 反向传播：![](../image/note3/sigmoid_2.jpg)  
-
-<center>![](../image/note3/sigmoid.jpg)</center>  
+![](../image/note3/sigmoid.jpg) 
 
 sigmoid函数的作用将输入限制到(0, 1)这个范围内
 
@@ -63,7 +61,7 @@ sigmoid函数的作用将输入限制到(0, 1)这个范围内
 
 反向传播：![](https://github.com/Joey-Hu/Python_TensorFlow_Keras/blob/master/TF/image/note3/tanh_2.jpg)  
 
-<center>![](https://github.com/Joey-Hu/Python_TensorFlow_Keras/blob/master/TF/image/note3/tanh.jpg)</center>  
+![](https://github.com/Joey-Hu/Python_TensorFlow_Keras/blob/master/TF/image/note3/tanh.jpg)
 
 无论从理论公式还是函数图像，这个函数都是一个和sigmoid非常相像的激活函数，他们的性质也确实如此。但是比起sigmoid，tanh减少了一个缺点，就是他本身是零均值的，也就是说，在传递过程中，输入数据的均值并不会发生改变，这就使他在很多应用中能表现出比sigmoid优异一些的效果。
 
@@ -73,16 +71,15 @@ sigmoid函数的作用将输入限制到(0, 1)这个范围内
 
 
 **3.ReLU函数**  
-
-<center>![](../image/note3/relu.jpg)</center> 
-<center>![](../image/note3/relu_1.jpg)</center> 
+![](../image/note3/relu.jpg)
+![](../image/note3/relu_1.jpg)
 
 特点： - 当输入为正数时，输出导数恒为1，缓解了梯度消失的问题。 - 为网络带来稀疏性，当输入值小于0，就会被稀疏掉，人的大脑稀疏性高达95%。 - 不管是正向计算，还是导数计算都非常简单。
 
 缺点： - 左硬饱和性，当输入小于零时，导数恒为0，会使很多神经元无法得到更新，出现“神经元死亡”。 - relu函数输出无负值。 - 均值漂移，relu函数的输出均值恒大于0（从relu函数的输出范围就能看出来）。
 
 **4.leaky relu函数**
-<center>![](../image/note3/leak_relu.jpg)</center>
+![](../image/note3/leak_relu.jpg)
 
 
 **5.softmax函数**
