@@ -102,7 +102,11 @@ softmax函数可以看做是sigmoid函数的一个扩展
 反向传播：  
 ![](../image/note3/softmax_4.jpg)  
 
-其中k=$\sum_{i\not=j}{e^{z_j}}$
+其中k=
+
+\begin{equation}
+\sum_{i\not=j}{e^{z_j}}
+\end{equation}
 
 
 参考资料：  
