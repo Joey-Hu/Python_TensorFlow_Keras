@@ -7,7 +7,11 @@
 
 **1.二次代价函数（又称均方差损失, MSE）**
 
+<<<<<<< HEAD
 ![](../image/note3/quadratic_cost.jpg)
+=======
+![](../image/note3/quadratic_cost.jpg)
+>>>>>>> 5e7e150ca27841bd16e6b404200ac8af3af6c811
 
 我们使用梯度下降法调整权值参数的大小，求权值w和偏置b的梯度推导  
 ![](../image/note3/gradient.jpg)
