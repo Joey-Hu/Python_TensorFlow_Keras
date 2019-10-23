@@ -12,3 +12,6 @@ ___梯度下降法___
 * Rmsprop
 
 在写论文的时候，当你设计了一个网络，你可以在跑数据的时候可以用上各种优化器，看哪一种得到的准确率最高
+
+参考资料：  
+https://blog.csdn.net/brucewong0516/article/details/78838124
